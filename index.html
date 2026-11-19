@@ -268,21 +268,18 @@
       <!-- Project 1 -->
       <div data-cat="interior" class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
         <div class="ba-container h-56 w-full" data-slider>
-          <!-- BEFORE Layer -->
           <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
                  alt="Before repainting living room"
                  class="w-full h-full object-cover grayscale contrast-75 brightness-90" />
             <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Before</span>
           </div>
-          <!-- AFTER Layer -->
           <div class="ba-after">
             <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
                  alt="After Warm Alabaster satin finish"
                  class="w-full h-full object-cover saturate-125 brightness-105" />
             <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">After</span>
           </div>
-          <!-- Slider Bar -->
           <div class="ba-divider">
             <div class="ba-handle" title="Drag to compare">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -312,21 +309,18 @@
       <!-- Project 2 -->
       <div data-cat="exterior" class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
         <div class="ba-container h-56 w-full" data-slider>
-          <!-- BEFORE Layer -->
           <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
                  alt="Before exterior waterproofing"
                  class="w-full h-full object-cover sepia-[.45] contrast-75 brightness-75" />
             <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Before</span>
           </div>
-          <!-- AFTER Layer -->
           <div class="ba-after">
             <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
                  alt="After exterior elastomeric finish"
                  class="w-full h-full object-cover saturate-110 brightness-105" />
             <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">After</span>
           </div>
-          <!-- Slider Bar -->
           <div class="ba-divider">
             <div class="ba-handle" title="Drag to compare">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -356,21 +350,18 @@
       <!-- Project 3 -->
       <div data-cat="interior" class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
         <div class="ba-container h-56 w-full" data-slider>
-          <!-- BEFORE Layer -->
           <div class="absolute inset-0">
             <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
                  alt="Before commercial studio repaint"
                  class="w-full h-full object-cover grayscale contrast-75 brightness-85" />
             <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Before</span>
           </div>
-          <!-- AFTER Layer -->
           <div class="ba-after">
             <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
                  alt="After sage matte and limewash finish"
                  class="w-full h-full object-cover saturate-125 brightness-105" />
             <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">After</span>
           </div>
-          <!-- Slider Bar -->
           <div class="ba-divider">
             <div class="ba-handle" title="Drag to compare">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -402,7 +393,6 @@
   <!-- Lightbox Image Modal -->
   <div id="lightboxModal" onclick="handleModalBackdrop(event)" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6">
     <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl">
-      <!-- Modal Header -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800">
         <div>
           <span id="lbBadge" class="text-[11px] font-bold uppercase tracking-wider text-amber-400">Interior • 3BHK</span>
@@ -415,7 +405,6 @@
         </button>
       </div>
 
-      <!-- Fullscreen Interactive Before/After Stage -->
       <div id="lbSlider" class="ba-container h-[320px] sm:h-[460px] w-full bg-slate-950" data-slider>
         <div class="absolute inset-0">
           <img id="lbBeforeImg" src="" alt="Before view" class="w-full h-full object-cover" />
@@ -434,7 +423,6 @@
         </div>
       </div>
 
-      <!-- Modal Footer Details -->
       <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-900">
         <div>
           <p id="lbDesc" class="text-sm text-slate-300 mb-2"></p>
@@ -451,24 +439,29 @@
     </div>
   </div>
 
-  <!-- Contact / Booking Form -->
+  <!-- Contact / Booking Form (Sends Directly to WhatsApp) -->
   <section id="contact" class="py-20 bg-slate-900 text-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10">
         <h2 class="text-3xl font-extrabold tracking-tight mb-2">Book a Free On-Site Inspection</h2>
-        <p class="text-slate-400">We’ll measure your walls, check moisture levels, and provide a fixed-price quote within 24 hours.</p>
+        <p class="text-slate-400">Fill in your details below to send your request directly to our team on WhatsApp.</p>
       </div>
 
-      <form id="quoteForm" onsubmit="submitQuote(event)" class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 space-y-5">
+      <form id="quoteForm" onsubmit="submitQuoteToWhatsApp(event)" class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 space-y-5">
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Full Name</label>
-            <input type="text" required placeholder="Rohan Sharma" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
+            <input id="clientName" type="text" required placeholder="Rohan Sharma" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Phone Number</label>
-            <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
+            <input id="clientPhone" type="tel" required placeholder="+91 98765 43210" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
           </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Location / Area (Optional)</label>
+          <input id="clientCity" type="text" placeholder="e.g., Andheri West, Mumbai" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
         </div>
 
         <div>
@@ -476,16 +469,27 @@
           <textarea id="projectNotes" rows="3" placeholder="Tell us about your rooms, preferred dates, or paste your estimate..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"></textarea>
         </div>
 
-        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 rounded-xl transition">
-          Request Free Site Visit
+        <button type="submit" class="w-full bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-extrabold py-3.5 rounded-xl transition flex items-center justify-center gap-2.5 shadow-lg">
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 22l4.955-1.301A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+          </svg>
+          Send Quote Request on WhatsApp
         </button>
 
         <div id="formSuccess" class="hidden bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm p-4 rounded-xl text-center font-medium">
-          ✓ Request received! Our senior painting consultant will call you within 2 business hours.
+          ✓ Opening WhatsApp with your project details...
         </div>
       </form>
     </div>
   </section>
+
+  <!-- Floating WhatsApp Chat Button -->
+  <button onclick="openDirectWhatsApp()" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold pl-4 pr-5 py-3.5 rounded-full shadow-2xl transition-all hover:scale-105">
+    <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 22l4.955-1.301A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+    </svg>
+    <span class="text-sm tracking-tight">Chat on WhatsApp</span>
+  </button>
 
   <!-- Footer -->
   <footer class="bg-slate-950 text-slate-500 py-8 text-center text-xs border-t border-slate-900">
@@ -493,6 +497,35 @@
   </footer>
 
   <script>
+    // यहाँ अपना असली WhatsApp नंबर डालें (Country Code 91 के साथ, बिना + या स्पेस के)
+    const WHATSAPP_NUMBER = "919876543210";
+
+    function openDirectWhatsApp() {
+      const text = encodeURIComponent("Hello ApexCoat! I would like to inquire about painting services and book a free site inspection.");
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
+    }
+
+    function submitQuoteToWhatsApp(e) {
+      e.preventDefault();
+      const name = document.getElementById('clientName').value.trim();
+      const phone = document.getElementById('clientPhone').value.trim();
+      const city = document.getElementById('clientCity').value.trim();
+      const notes = document.getElementById('projectNotes').value.trim();
+
+      const message =
+        `*New Painting Quote Request — ApexCoat*\n` +
+        `----------------------------------\n` +
+        `*Name:* ${name}\n` +
+        `*Phone:* ${phone}\n` +
+        (city ? `*Location:* ${city}\n` : ``) +
+        `*Details:* ${notes || "Need a free on-site painting estimate."}`;
+
+      document.getElementById('formSuccess').classList.remove('hidden');
+      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+      window.open(waUrl, "_blank");
+      e.target.reset();
+    }
+
     const projectsData = [
       {
         title: "Bandra West Apartment",
@@ -583,7 +616,6 @@
       afterImg.src = p.img;
       afterImg.className = p.afterClass;
 
-      // Reset slider to 50%
       const lbSlider = document.getElementById('lbSlider');
       lbSlider.querySelector('.ba-after').style.clipPath = 'inset(0 0 0 50%)';
       lbSlider.querySelector('.ba-divider').style.left = '50%';
@@ -657,12 +689,6 @@
       document.querySelectorAll('.project-card').forEach(card => {
         card.style.display = (category === 'all' || card.dataset.cat === category) ? 'flex' : 'none';
       });
-    }
-
-    function submitQuote(e) {
-      e.preventDefault();
-      document.getElementById('formSuccess').classList.remove('hidden');
-      e.target.reset();
     }
 
     initSliders();
