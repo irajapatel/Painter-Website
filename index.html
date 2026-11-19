@@ -55,8 +55,8 @@
 
   <!-- Navigation -->
   <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight text-slate-900">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+      <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight text-slate-900 shrink-0">
         <span class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white">
           <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -65,16 +65,41 @@
         Apex<span class="text-amber-600">Coat</span>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-600">
         <a href="#services" class="hover:text-amber-600 transition">Services</a>
         <a href="#estimator" class="hover:text-amber-600 transition">Cost Estimator</a>
         <a href="#portfolio" class="hover:text-amber-600 transition">Recent Work</a>
         <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
       </nav>
 
-      <a href="#contact" class="bg-slate-900 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition shadow-sm">
-        Get Free Quote
-      </a>
+      <!-- Auth & CTA Buttons -->
+      <div class="flex items-center gap-2.5">
+        <!-- Logged Out State -->
+        <div id="authLoggedOut" class="flex items-center gap-2">
+          <button onclick="openAuthModal('signin')" class="text-sm font-semibold text-slate-700 hover:text-amber-600 px-3 py-2 rounded-lg transition">
+            Sign In
+          </button>
+          <button onclick="openAuthModal('signup')" class="text-sm font-semibold bg-amber-100 hover:bg-amber-200 text-amber-900 px-3.5 py-2 rounded-lg transition">
+            Sign Up
+          </button>
+        </div>
+
+        <!-- Logged In State -->
+        <div id="authLoggedIn" class="hidden flex items-center gap-2">
+          <button onclick="openSavedQuotesModal()" class="inline-flex items-center gap-1.5 text-xs font-bold bg-slate-100 hover:bg-slate-200 text-slate-800 px-3 py-2 rounded-lg transition">
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+            <span id="navUserName">User</span>
+            <span id="savedQuotesCount" class="bg-amber-500 text-slate-950 text-[10px] font-extrabold px-1.5 py-0.2 rounded-full">0</span>
+          </button>
+          <button onclick="logoutUser()" class="text-xs font-semibold text-slate-500 hover:text-rose-600 px-2 py-2 transition" title="Sign Out">
+            Logout
+          </button>
+        </div>
+
+        <a href="#contact" class="hidden sm:inline-block bg-slate-900 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2 rounded-lg transition shadow-sm">
+          Get Free Quote
+        </a>
+      </div>
     </div>
   </header>
 
@@ -439,7 +464,7 @@
     </div>
   </div>
 
-  <!-- Contact / Booking Form (Sends Directly to WhatsApp) -->
+  <!-- Contact / Booking Form (Sends Directly to WhatsApp + Saves to User Account) -->
   <section id="contact" class="py-20 bg-slate-900 text-white">
     <div class="max-w-3xl mx-auto px-4 sm:px-6">
       <div class="text-center mb-10">
@@ -451,11 +476,11 @@
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Full Name</label>
-            <input id="clientName" type="text" required placeholder="Your Name" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
+            <input id="clientName" type="text" required placeholder="Rohan Sharma" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
           </div>
           <div>
             <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Phone Number</label>
-            <input id="clientPhone" type="tel" required placeholder="+91 98XXX XXXXX" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
+            <input id="clientPhone" type="tel" required placeholder="+91 98765 43210" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
           </div>
         </div>
 
@@ -483,6 +508,91 @@
     </div>
   </section>
 
+  <!-- Sign In & Sign Up Modal -->
+  <div id="authModal" onclick="if(event.target.id==='authModal') closeAuthModal()" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl border border-slate-200">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+        <div class="flex items-center gap-2 font-extrabold text-lg text-slate-900">
+          <span class="w-6 h-6 rounded bg-amber-500 flex items-center justify-center text-white text-xs">A</span>
+          Apex<span class="text-amber-600">Coat</span> Account
+        </div>
+        <button onclick="closeAuthModal()" class="w-8 h-8 rounded-lg hover:bg-slate-100 text-slate-500 flex items-center justify-center">
+          ✕
+        </button>
+      </div>
+
+      <!-- Tabs -->
+      <div class="grid grid-cols-2 bg-slate-100 p-1 m-6 mb-2 rounded-xl text-sm font-bold">
+        <button id="tabSignIn" onclick="switchAuthTab('signin')" class="py-2 rounded-lg bg-white text-slate-900 shadow-sm transition">
+          Sign In
+        </button>
+        <button id="tabSignUp" onclick="switchAuthTab('signup')" class="py-2 rounded-lg text-slate-500 hover:text-slate-900 transition">
+          Sign Up
+        </button>
+      </div>
+
+      <!-- Alert Banner -->
+      <div id="authAlert" class="hidden mx-6 mt-3 px-4 py-2.5 rounded-xl text-xs font-semibold"></div>
+
+      <!-- Sign In Form -->
+      <form id="signInForm" onsubmit="handleSignIn(event)" class="p-6 pt-4 space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Email Address</label>
+          <input id="loginEmail" type="email" required placeholder="rohan@example.com" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Password</label>
+          <input id="loginPassword" type="password" required placeholder="••••••••" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+        </div>
+        <button type="submit" class="w-full bg-slate-900 hover:bg-amber-600 text-white font-bold py-3 rounded-xl transition text-sm">
+          Sign In to Account
+        </button>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form id="signUpForm" onsubmit="handleSignUp(event)" class="hidden p-6 pt-4 space-y-4">
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Full Name</label>
+          <input id="regName" type="text" required placeholder="Rohan Sharma" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Email</label>
+            <input id="regEmail" type="email" required placeholder="rohan@example.com" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Phone</label>
+            <input id="regPhone" type="tel" required placeholder="9876543210" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+          </div>
+        </div>
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-500 mb-1.5">Create Password</label>
+          <input id="regPassword" type="password" minlength="6" required placeholder="Min 6 characters" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500" />
+        </div>
+        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition text-sm">
+          Create Free Account
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Saved Quotes Modal (For Signed-In Users) -->
+  <div id="savedQuotesModal" onclick="if(event.target.id==='savedQuotesModal') closeSavedQuotesModal()" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-100">
+        <div>
+          <h3 class="font-extrabold text-lg text-slate-900">My Saved Quote Requests</h3>
+          <p id="profileEmailSub" class="text-xs text-slate-500"></p>
+        </div>
+        <button onclick="closeSavedQuotesModal()" class="w-8 h-8 rounded-lg hover:bg-slate-100 text-slate-500 flex items-center justify-center">✕</button>
+      </div>
+      <div id="savedQuotesList" class="p-6 max-h-80 overflow-y-auto space-y-3 text-sm">
+        <p class="text-slate-500 text-center py-6">No quote requests saved yet.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- Floating WhatsApp Chat Button -->
   <button onclick="openDirectWhatsApp()" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold pl-4 pr-5 py-3.5 rounded-full shadow-2xl transition-all hover:scale-105">
     <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
@@ -498,8 +608,159 @@
 
   <script>
     // यहाँ अपना असली WhatsApp नंबर डालें (Country Code 91 के साथ, बिना + या स्पेस के)
-    const WHATSAPP_NUMBER = "917400253895";
+    const WHATSAPP_NUMBER = "919876543210";
 
+    /* ================= AUTHENTICATION (SIGN UP / SIGN IN) ================= */
+    const USERS_KEY = "apexcoat_users";
+    const SESSION_KEY = "apexcoat_current_user";
+
+    function getUsers() {
+      return JSON.parse(localStorage.getItem(USERS_KEY) || "[]");
+    }
+
+    function saveUsers(users) {
+      localStorage.setItem(USERS_KEY, JSON.stringify(users));
+    }
+
+    function getCurrentUser() {
+      return JSON.parse(localStorage.getItem(SESSION_KEY) || "null");
+    }
+
+    function openAuthModal(mode = 'signin') {
+      document.getElementById('authModal').classList.remove('hidden');
+      switchAuthTab(mode);
+    }
+
+    function closeAuthModal() {
+      document.getElementById('authModal').classList.add('hidden');
+      hideAuthAlert();
+    }
+
+    function switchAuthTab(mode) {
+      hideAuthAlert();
+      const isSignIn = mode === 'signin';
+      document.getElementById('signInForm').classList.toggle('hidden', !isSignIn);
+      document.getElementById('signUpForm').classList.toggle('hidden', isSignIn);
+
+      const tabIn = document.getElementById('tabSignIn');
+      const tabUp = document.getElementById('tabSignUp');
+      if (isSignIn) {
+        tabIn.className = "py-2 rounded-lg bg-white text-slate-900 shadow-sm transition";
+        tabUp.className = "py-2 rounded-lg text-slate-500 hover:text-slate-900 transition";
+      } else {
+        tabUp.className = "py-2 rounded-lg bg-white text-slate-900 shadow-sm transition";
+        tabIn.className = "py-2 rounded-lg text-slate-500 hover:text-slate-900 transition";
+      }
+    }
+
+    function showAuthAlert(msg, isError = true) {
+      const el = document.getElementById('authAlert');
+      el.textContent = msg;
+      el.className = `mx-6 mt-3 px-4 py-2.5 rounded-xl text-xs font-semibold ${
+        isError ? 'bg-rose-50 text-rose-700 border border-rose-200' : 'bg-emerald-50 text-emerald-700 border border-emerald-200'
+      }`;
+      el.classList.remove('hidden');
+    }
+
+    function hideAuthAlert() {
+      document.getElementById('authAlert').classList.add('hidden');
+    }
+
+    function handleSignUp(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value.trim();
+      const email = document.getElementById('regEmail').value.trim().toLowerCase();
+      const phone = document.getElementById('regPhone').value.trim();
+      const password = document.getElementById('regPassword').value;
+
+      const users = getUsers();
+      if (users.some(u => u.email === email)) {
+        showAuthAlert("An account with this email already exists. Please Sign In.");
+        return;
+      }
+
+      const newUser = { name, email, phone, password, quotes: [] };
+      users.push(newUser);
+      saveUsers(users);
+      localStorage.setItem(SESSION_KEY, JSON.stringify(newUser));
+
+      e.target.reset();
+      updateAuthUI();
+      closeAuthModal();
+    }
+
+    function handleSignIn(e) {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim().toLowerCase();
+      const password = document.getElementById('loginPassword').value;
+
+      const users = getUsers();
+      const matched = users.find(u => u.email === email && u.password === password);
+      if (!matched) {
+        showAuthAlert("Invalid email or password. Please try again.");
+        return;
+      }
+
+      localStorage.setItem(SESSION_KEY, JSON.stringify(matched));
+      e.target.reset();
+      updateAuthUI();
+      closeAuthModal();
+    }
+
+    function logoutUser() {
+      localStorage.removeItem(SESSION_KEY);
+      updateAuthUI();
+    }
+
+    function updateAuthUI() {
+      const user = getCurrentUser();
+      const loggedOutEl = document.getElementById('authLoggedOut');
+      const loggedInEl = document.getElementById('authLoggedIn');
+
+      if (user) {
+        loggedOutEl.classList.add('hidden');
+        loggedInEl.classList.remove('hidden');
+        document.getElementById('navUserName').textContent = user.name.split(' ')[0];
+        document.getElementById('savedQuotesCount').textContent = (user.quotes || []).length;
+
+        // Pre-fill contact form fields for convenience
+        const nameInput = document.getElementById('clientName');
+        const phoneInput = document.getElementById('clientPhone');
+        if (nameInput && !nameInput.value) nameInput.value = user.name;
+        if (phoneInput && !phoneInput.value && user.phone) phoneInput.value = user.phone;
+      } else {
+        loggedOutEl.classList.remove('hidden');
+        loggedInEl.classList.add('hidden');
+      }
+    }
+
+    function openSavedQuotesModal() {
+      const user = getCurrentUser();
+      if (!user) return;
+      document.getElementById('profileEmailSub').textContent = `${user.name} (${user.email})`;
+      const list = document.getElementById('savedQuotesList');
+
+      if (!user.quotes || user.quotes.length === 0) {
+        list.innerHTML = `<p class="text-slate-500 text-center py-6">No quote requests saved yet. Submit the quote form to save one here!</p>`;
+      } else {
+        list.innerHTML = user.quotes.map(q => `
+          <div class="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
+            <div class="flex justify-between text-xs text-slate-400 mb-1">
+              <span>${q.date}</span>
+              <span class="font-semibold text-emerald-600">Sent via WhatsApp</span>
+            </div>
+            <p class="font-semibold text-slate-800 text-xs">${q.notes}</p>
+          </div>
+        `).join('');
+      }
+      document.getElementById('savedQuotesModal').classList.remove('hidden');
+    }
+
+    function closeSavedQuotesModal() {
+      document.getElementById('savedQuotesModal').classList.add('hidden');
+    }
+
+    /* ================= WHATSAPP & QUOTE SUBMISSION ================= */
     function openDirectWhatsApp() {
       const text = encodeURIComponent("Hello ApexCoat! I would like to inquire about painting services and book a free site inspection.");
       window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${text}`, "_blank");
@@ -511,6 +772,24 @@
       const phone = document.getElementById('clientPhone').value.trim();
       const city = document.getElementById('clientCity').value.trim();
       const notes = document.getElementById('projectNotes').value.trim();
+      const summary = notes || "Need a free on-site painting estimate.";
+
+      // Save quote to logged-in user's account if signed in
+      const currentUser = getCurrentUser();
+      if (currentUser) {
+        const users = getUsers();
+        const idx = users.findIndex(u => u.email === currentUser.email);
+        if (idx !== -1) {
+          users[idx].quotes = users[idx].quotes || [];
+          users[idx].quotes.unshift({
+            date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+            notes: `${city ? '[' + city + '] ' : ''}${summary}`
+          });
+          saveUsers(users);
+          localStorage.setItem(SESSION_KEY, JSON.stringify(users[idx]));
+          updateAuthUI();
+        }
+      }
 
       const message =
         `*New Painting Quote Request — ApexCoat*\n` +
@@ -518,14 +797,16 @@
         `*Name:* ${name}\n` +
         `*Phone:* ${phone}\n` +
         (city ? `*Location:* ${city}\n` : ``) +
-        `*Details:* ${notes || "Need a free on-site painting estimate."}`;
+        `*Details:* ${summary}`;
 
       document.getElementById('formSuccess').classList.remove('hidden');
       const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
       window.open(waUrl, "_blank");
       e.target.reset();
+      updateAuthUI();
     }
 
+    /* ================= PORTFOLIO SLIDERS & LIGHTBOX ================= */
     const projectsData = [
       {
         title: "Bandra West Apartment",
@@ -573,19 +854,16 @@
     function initSliders() {
       document.querySelectorAll('[data-slider]').forEach(container => {
         let dragging = false;
-
         const start = (e) => {
           dragging = true;
           const x = e.touches ? e.touches[0].clientX : e.clientX;
           setSliderPosition(container, x);
         };
-
         const move = (e) => {
           if (!dragging) return;
           const x = e.touches ? e.touches[0].clientX : e.clientX;
           setSliderPosition(container, x);
         };
-
         const end = () => { dragging = false; };
 
         container.addEventListener('mousedown', start);
@@ -643,9 +921,14 @@
     }
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeAuthModal();
+        closeSavedQuotesModal();
+      }
     });
 
+    /* ================= SWATCH & COST ESTIMATOR ================= */
     function setSwatch(hex, name) {
       document.getElementById('roomPreview').style.backgroundColor = hex;
       document.getElementById('activeColorName').textContent = `${name} (${hex})`;
@@ -693,6 +976,7 @@
 
     initSliders();
     calculateEstimate();
+    updateAuthUI();
   </script>
 </body>
 </html>
