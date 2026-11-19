@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apex Coat — Professional Residential & Commercial Painting</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    .ba-container {
+      position: relative;
+      overflow: hidden;
+      user-select: none;
+      touch-action: pan-y;
+    }
+    .ba-after {
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0 0 0 50%);
+    }
+    .ba-divider {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 2px;
+      background: #ffffff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.45);
+      pointer-events: none;
+      transform: translateX(-50%);
+    }
+    .ba-handle {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 9999px;
+      background: #f59e0b;
+      border: 2.5px solid #ffffff;
+      color: #0f172a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.35);
+      cursor: ew-resize;
+      pointer-events: auto;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <!-- Navigation -->
+  <header class="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-extrabold text-xl tracking-tight text-slate-900">
+        <span class="w-8 h-8 rounded-lg bg-amber-500 flex items-center justify-center text-white">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+          </svg>
+        </span>
+        Apex<span class="text-amber-600">Coat</span>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#services" class="hover:text-amber-600 transition">Services</a>
+        <a href="#estimator" class="hover:text-amber-600 transition">Cost Estimator</a>
+        <a href="#portfolio" class="hover:text-amber-600 transition">Recent Work</a>
+        <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
+      </nav>
+
+      <a href="#contact" class="bg-slate-900 hover:bg-amber-600 text-white text-sm font-semibold px-4 py-2.5 rounded-lg transition shadow-sm">
+        Get Free Quote
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden bg-slate-900 text-white py-20 sm:py-28">
+    <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#f59e0b_1px,transparent_1px)] [background-size:24px_24px]"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="inline-block bg-amber-500/20 text-amber-300 border border-amber-500/30 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full mb-5">
+          Licensed • Insured • Dust-Free Prep
+        </span>
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight leading-tight mb-6">
+          Flawless Finishes That Transform Every Room.
+        </h1>
+        <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+          From precision interior repaints and waterproofing to weather-shield exterior coatings. Clean lines, zero mess, and on-time completion guaranteed.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#estimator" class="bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-6 py-3.5 rounded-xl transition shadow-lg">
+            Calculate Paint Estimate
+          </a>
+          <a href="#portfolio" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-xl border border-slate-700 transition">
+            View Before & After
+          </a>
+        </div>
+        <div class="mt-10 pt-8 border-t border-slate-800 grid grid-cols-3 gap-6 text-sm">
+          <div>
+            <p class="text-2xl font-extrabold text-white">450+</p>
+            <p class="text-slate-400">Homes Painted</p>
+          </div>
+          <div>
+            <p class="text-2xl font-extrabold text-white">5-Yr</p>
+            <p class="text-slate-400">Peel-Free Warranty</p>
+          </div>
+          <div>
+            <p class="text-2xl font-extrabold text-white">4.9 ★</p>
+            <p class="text-slate-400">Client Rating</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Color Swatch Showcase Card -->
+      <div class="bg-slate-800/80 border border-slate-700 rounded-2xl p-6 sm:p-8 shadow-2xl">
+        <div class="flex items-center justify-between mb-4">
+          <span class="text-xs font-semibold uppercase tracking-wider text-slate-400">2026 Trending Palette Preview</span>
+          <span id="activeColorName" class="text-xs font-bold text-amber-400">Warm Alabaster (#F5F2EB)</span>
+        </div>
+        <div id="roomPreview" class="h-56 rounded-xl transition-colors duration-300 flex items-end p-5 shadow-inner border border-black/10" style="background-color: #F5F2EB;">
+          <div class="bg-white/90 backdrop-blur px-4 py-2.5 rounded-lg shadow-sm">
+            <p class="text-xs font-semibold text-slate-500">Live Wall Swatch</p>
+            <p id="roomPreviewLabel" class="text-sm font-bold text-slate-900">Warm Alabaster — Matte Finish</p>
+          </div>
+        </div>
+        <div class="mt-5">
+          <p class="text-xs text-slate-400 mb-2.5">Click a swatch to test wall color:</p>
+          <div class="grid grid-cols-5 gap-3">
+            <button onclick="setSwatch('#F5F2EB', 'Warm Alabaster')" class="h-10 rounded-lg border-2 border-white shadow hover:scale-105 transition" style="background:#F5F2EB" title="Warm Alabaster"></button>
+            <button onclick="setSwatch('#CBD5E1', 'Misty Slate')" class="h-10 rounded-lg border-2 border-transparent hover:border-white shadow hover:scale-105 transition" style="background:#CBD5E1" title="Misty Slate"></button>
+            <button onclick="setSwatch('#A3B18A', 'Sage Grove')" class="h-10 rounded-lg border-2 border-transparent hover:border-white shadow hover:scale-105 transition" style="background:#A3B18A" title="Sage Grove"></button>
+            <button onclick="setSwatch('#D4A373', 'Terracotta Sand')" class="h-10 rounded-lg border-2 border-transparent hover:border-white shadow hover:scale-105 transition" style="background:#D4A373" title="Terracotta Sand"></button>
+            <button onclick="setSwatch('#1E293B', 'Midnight Navy')" class="h-10 rounded-lg border-2 border-transparent hover:border-white shadow hover:scale-105 transition" style="background:#1E293B" title="Midnight Navy"></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <h2 class="text-3xl font-extrabold tracking-tight mb-3">Complete Painting & Surface Solutions</h2>
+      <p class="text-slate-600">Every project includes full furniture masking, crack filling, primer coat, and post-job deep cleanup.</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xl mb-5">01</div>
+        <h3 class="text-xl font-bold mb-2">Interior Wall & Ceiling</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Low-odor, washable luxury emulsions for living rooms, bedrooms, kitchens, and accent feature walls.</p>
+        <ul class="text-xs text-slate-500 space-y-1.5 font-medium">
+          <li>✓ Laser-straight ceiling cut-ins</li>
+          <li>✓ Putty leveling & sanding</li>
+          <li>✓ Low-VOC child-safe paints</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xl mb-5">02</div>
+        <h3 class="text-xl font-bold mb-2">Exterior & Waterproofing</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">Elastomeric weather-shield coatings engineered to resist monsoon dampness, algae, and UV fading.</p>
+        <ul class="text-xs text-slate-500 space-y-1.5 font-medium">
+          <li>✓ High-pressure fungal wash</li>
+          <li>✓ Damp-proof elastomeric basecoat</li>
+          <li>✓ Up to 7-year exterior durability</li>
+        </ul>
+      </div>
+
+      <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+        <div class="w-12 h-12 rounded-xl bg-amber-100 text-amber-600 flex items-center justify-center font-bold text-xl mb-5">03</div>
+        <h3 class="text-xl font-bold mb-2">Wood, Metal & Textures</h3>
+        <p class="text-slate-600 text-sm leading-relaxed mb-4">PU polish for doors and cabinetry, anti-rust enamel for grilles, and custom Venetian/metallic wall textures.</p>
+        <ul class="text-xs text-slate-500 space-y-1.5 font-medium">
+          <li>✓ Spray & hand-rubbed PU finishes</li>
+          <li>✓ Rust-inhibiting metal primers</li>
+          <li>✓ Designer stucco & concrete textures</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Cost Estimator -->
+  <section id="estimator" class="py-20 bg-slate-100 border-y border-slate-200">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-extrabold tracking-tight mb-2">Instant Painting Cost Estimator</h2>
+        <p class="text-slate-600">Adjust your area and finish grade to get an instant ballpark estimate (materials + labor).</p>
+      </div>
+
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-lg p-6 sm:p-10 grid md:grid-cols-2 gap-8 items-center">
+        <div class="space-y-6">
+          <div>
+            <div class="flex justify-between text-sm font-bold mb-2">
+              <label for="sqftRange">Paintable Wall Area</label>
+              <span class="text-amber-600"><span id="sqftValue">1200</span> sq. ft.</span>
+            </div>
+            <input id="sqftRange" type="range" min="200" max="5000" step="100" value="1200" oninput="calculateEstimate()" class="w-full accent-amber-500 cursor-pointer" />
+            <div class="flex justify-between text-xs text-slate-400 mt-1">
+              <span>200 sq.ft (1 Room)</span>
+              <span>5,000 sq.ft (Villa)</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold mb-2">Service Type</label>
+            <select id="serviceType" onchange="calculateEstimate()" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500">
+              <option value="interior">Interior Repaint (2 Coats + Primer)</option>
+              <option value="fresh">Fresh Interior (Putty + Primer + 2 Coats)</option>
+              <option value="exterior">Exterior Weather-Shield Coating</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-bold mb-2">Paint Grade</label>
+            <select id="paintGrade" onchange="calculateEstimate()" class="w-full border border-slate-300 rounded-xl px-4 py-2.5 text-sm font-medium focus:outline-none focus:ring-2 focus:ring-amber-500">
+              <option value="1">Standard Matte Emulsion</option>
+              <option value="1.35" selected>Premium Washable Satin / Silk</option>
+              <option value="1.75">Ultra-Luxury Royal / Elastomeric</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="bg-slate-900 text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+          <div>
+            <p class="text-xs uppercase tracking-wider text-slate-400 font-semibold mb-1">Estimated Project Total</p>
+            <p id="estimateTotal" class="text-4xl font-extrabold text-amber-400 mb-2">₹32,400</p>
+            <p id="estimateBreakdown" class="text-xs text-slate-300 mb-6">Includes paint, primer, masking tape, labor & cleanup.</p>
+            <div class="border-t border-slate-800 pt-4 space-y-2 text-xs text-slate-300">
+              <div class="flex justify-between">
+                <span>Estimated Paint Required:</span>
+                <span id="paintGallons" class="font-bold text-white">~18 Liters</span>
+              </div>
+              <div class="flex justify-between">
+                <span>Estimated Completion Time:</span>
+                <span id="estDays" class="font-bold text-white">3–4 Days</span>
+              </div>
+            </div>
+          </div>
+          <button onclick="prefillQuote()" class="mt-6 w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 rounded-xl transition text-sm">
+            Lock In This Estimate →
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section with Before/After Sliders & Lightbox Modal -->
+  <section id="portfolio" class="py-20 max-w-6xl mx-auto px-4 sm:px-6">
+    <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-10 gap-4">
+      <div>
+        <h2 class="text-3xl font-extrabold tracking-tight mb-2">Recent Transformations</h2>
+        <p class="text-slate-600">Drag the slider on any project to compare Before & After, or click <strong class="text-slate-800">Inspect Fullscreen</strong>.</p>
+      </div>
+      <div class="flex gap-2">
+        <button onclick="filterProjects('all', this)" class="filter-btn bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-lg">All</button>
+        <button onclick="filterProjects('interior', this)" class="filter-btn bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-300">Interior</button>
+        <button onclick="filterProjects('exterior', this)" class="filter-btn bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-300">Exterior</button>
+      </div>
+    </div>
+
+    <div id="projectGrid" class="grid md:grid-cols-3 gap-6">
+      <!-- Project 1 -->
+      <div data-cat="interior" class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+        <div class="ba-container h-56 w-full" data-slider>
+          <!-- BEFORE Layer -->
+          <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
+                 alt="Before repainting living room"
+                 class="w-full h-full object-cover grayscale contrast-75 brightness-90" />
+            <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Before</span>
+          </div>
+          <!-- AFTER Layer -->
+          <div class="ba-after">
+            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=900&q=80"
+                 alt="After Warm Alabaster satin finish"
+                 class="w-full h-full object-cover saturate-125 brightness-105" />
+            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">After</span>
+          </div>
+          <!-- Slider Bar -->
+          <div class="ba-divider">
+            <div class="ba-handle" title="Drag to compare">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <h3 class="font-bold text-lg">Bandra West Apartment</h3>
+              <span class="text-[11px] font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded">Interior • 3BHK</span>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Full Warm Alabaster satin emulsion repaint with custom PU wood polish on main teak doors.</p>
+          </div>
+          <button onclick="openLightbox(0)" class="w-full inline-flex items-center justify-center gap-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-amber-500 hover:text-slate-950 py-2.5 rounded-xl transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+            Inspect Fullscreen
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div data-cat="exterior" class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+        <div class="ba-container h-56 w-full" data-slider>
+          <!-- BEFORE Layer -->
+          <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                 alt="Before exterior waterproofing"
+                 class="w-full h-full object-cover sepia-[.45] contrast-75 brightness-75" />
+            <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Before</span>
+          </div>
+          <!-- AFTER Layer -->
+          <div class="ba-after">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=900&q=80"
+                 alt="After exterior elastomeric finish"
+                 class="w-full h-full object-cover saturate-110 brightness-105" />
+            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">After</span>
+          </div>
+          <!-- Slider Bar -->
+          <div class="ba-divider">
+            <div class="ba-handle" title="Drag to compare">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <h3 class="font-bold text-lg">Juhu Coastal Bungalow</h3>
+              <span class="text-[11px] font-bold text-sky-800 bg-sky-100 px-2 py-0.5 rounded">Exterior • Villa</span>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Crack-bridging waterproofing basecoat plus salt-resistant elastomeric exterior topcoat.</p>
+          </div>
+          <button onclick="openLightbox(1)" class="w-full inline-flex items-center justify-center gap-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-amber-500 hover:text-slate-950 py-2.5 rounded-xl transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+            Inspect Fullscreen
+          </button>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div data-cat="interior" class="project-card bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm flex flex-col">
+        <div class="ba-container h-56 w-full" data-slider>
+          <!-- BEFORE Layer -->
+          <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
+                 alt="Before commercial studio repaint"
+                 class="w-full h-full object-cover grayscale contrast-75 brightness-85" />
+            <span class="absolute top-3 left-3 bg-slate-900/80 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">Before</span>
+          </div>
+          <!-- AFTER Layer -->
+          <div class="ba-after">
+            <img src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=900&q=80"
+                 alt="After sage matte and limewash finish"
+                 class="w-full h-full object-cover saturate-125 brightness-105" />
+            <span class="absolute top-3 right-3 bg-amber-500 text-slate-950 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded">After</span>
+          </div>
+          <!-- Slider Bar -->
+          <div class="ba-divider">
+            <div class="ba-handle" title="Drag to compare">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <div class="flex items-center justify-between gap-2 mb-1">
+              <h3 class="font-bold text-lg">Andheri Creative Loft</h3>
+              <span class="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">Commercial • Studio</span>
+            </div>
+            <p class="text-slate-600 text-sm mb-4">Zero-VOC Sage Matte walls paired with a hand-troweled acoustic limewash feature backdrop.</p>
+          </div>
+          <button onclick="openLightbox(2)" class="w-full inline-flex items-center justify-center gap-2 text-xs font-bold text-slate-800 bg-slate-100 hover:bg-amber-500 hover:text-slate-950 py-2.5 rounded-xl transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+            </svg>
+            Inspect Fullscreen
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox Image Modal -->
+  <div id="lightboxModal" onclick="handleModalBackdrop(event)" class="fixed inset-0 z-50 hidden bg-slate-950/90 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6">
+    <div class="bg-slate-900 border border-slate-700 rounded-2xl max-w-4xl w-full overflow-hidden shadow-2xl">
+      <!-- Modal Header -->
+      <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800">
+        <div>
+          <span id="lbBadge" class="text-[11px] font-bold uppercase tracking-wider text-amber-400">Interior • 3BHK</span>
+          <h3 id="lbTitle" class="text-lg sm:text-xl font-extrabold text-white">Bandra West Apartment</h3>
+        </div>
+        <button onclick="closeLightbox()" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center transition" aria-label="Close modal">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Fullscreen Interactive Before/After Stage -->
+      <div id="lbSlider" class="ba-container h-[320px] sm:h-[460px] w-full bg-slate-950" data-slider>
+        <div class="absolute inset-0">
+          <img id="lbBeforeImg" src="" alt="Before view" class="w-full h-full object-cover" />
+          <span class="absolute top-4 left-4 bg-slate-950/85 text-white text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg border border-white/10">Before Surface</span>
+        </div>
+        <div class="ba-after">
+          <img id="lbAfterImg" src="" alt="After view" class="w-full h-full object-cover" />
+          <span class="absolute top-4 right-4 bg-amber-500 text-slate-950 text-xs font-bold uppercase tracking-wider px-3 py-1.5 rounded-lg shadow">After ApexCoat</span>
+        </div>
+        <div class="ba-divider">
+          <div class="ba-handle" title="Drag to compare">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-3 3 3 3m8-6l3 3-3 3" />
+            </svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal Footer Details -->
+      <div class="p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-900">
+        <div>
+          <p id="lbDesc" class="text-sm text-slate-300 mb-2"></p>
+          <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+            <span>Area: <strong id="lbArea" class="text-white"></strong></span>
+            <span>System: <strong id="lbSystem" class="text-white"></strong></span>
+            <span>Duration: <strong id="lbDuration" class="text-white"></strong></span>
+          </div>
+        </div>
+        <button onclick="bookSimilarProject()" class="shrink-0 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs px-5 py-3 rounded-xl transition">
+          Request Similar Finish →
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact / Booking Form -->
+  <section id="contact" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-extrabold tracking-tight mb-2">Book a Free On-Site Inspection</h2>
+        <p class="text-slate-400">We’ll measure your walls, check moisture levels, and provide a fixed-price quote within 24 hours.</p>
+      </div>
+
+      <form id="quoteForm" onsubmit="submitQuote(event)" class="bg-slate-800 border border-slate-700 rounded-2xl p-6 sm:p-8 space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Full Name</label>
+            <input type="text" required placeholder="Rohan Sharma" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
+          </div>
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Phone Number</label>
+            <input type="tel" required placeholder="+91 98765 43210" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500" />
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Project Details / Estimate Summary</label>
+          <textarea id="projectNotes" rows="3" placeholder="Tell us about your rooms, preferred dates, or paste your estimate..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-amber-500"></textarea>
+        </div>
+
+        <button type="submit" class="w-full bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3.5 rounded-xl transition">
+          Request Free Site Visit
+        </button>
+
+        <div id="formSuccess" class="hidden bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-sm p-4 rounded-xl text-center font-medium">
+          ✓ Request received! Our senior painting consultant will call you within 2 business hours.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-950 text-slate-500 py-8 text-center text-xs border-t border-slate-900">
+    <p>© 2026 ApexCoat Painting Services. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const projectsData = [
+      {
+        title: "Bandra West Apartment",
+        badge: "Interior • 3BHK",
+        desc: "2-coat acrylic putty leveling followed by Warm Alabaster washable satin emulsion and hand-rubbed teak PU polish.",
+        area: "2,100 sq. ft.",
+        system: "Luxury Satin Emulsion + PU Wood",
+        duration: "5 Days",
+        img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85",
+        beforeClass: "w-full h-full object-cover grayscale contrast-75 brightness-90",
+        afterClass: "w-full h-full object-cover saturate-125 brightness-105"
+      },
+      {
+        title: "Juhu Coastal Bungalow",
+        badge: "Exterior • Villa",
+        desc: "High-pressure fungal wash, fiber-reinforced crack filling, and high-build elastomeric coastal weather barrier.",
+        area: "4,400 sq. ft.",
+        system: "Elastomeric Damp-Proof Shield",
+        duration: "8 Days",
+        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
+        beforeClass: "w-full h-full object-cover sepia-[.45] contrast-75 brightness-75",
+        afterClass: "w-full h-full object-cover saturate-110 brightness-105"
+      },
+      {
+        title: "Andheri Creative Loft",
+        badge: "Commercial • Studio",
+        desc: "Zero-VOC Sage Matte emulsion across workstations with a custom hand-troweled mineral limewash accent wall.",
+        area: "1,650 sq. ft.",
+        system: "Zero-VOC Matte + Limewash Texture",
+        duration: "4 Days",
+        img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85",
+        beforeClass: "w-full h-full object-cover grayscale contrast-75 brightness-85",
+        afterClass: "w-full h-full object-cover saturate-125 brightness-105"
+      }
+    ];
+
+    function setSliderPosition(container, clientX) {
+      const rect = container.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(2, Math.min(98, pct));
+      container.querySelector('.ba-after').style.clipPath = `inset(0 0 0 ${pct}%)`;
+      container.querySelector('.ba-divider').style.left = `${pct}%`;
+    }
+
+    function initSliders() {
+      document.querySelectorAll('[data-slider]').forEach(container => {
+        let dragging = false;
+
+        const start = (e) => {
+          dragging = true;
+          const x = e.touches ? e.touches[0].clientX : e.clientX;
+          setSliderPosition(container, x);
+        };
+
+        const move = (e) => {
+          if (!dragging) return;
+          const x = e.touches ? e.touches[0].clientX : e.clientX;
+          setSliderPosition(container, x);
+        };
+
+        const end = () => { dragging = false; };
+
+        container.addEventListener('mousedown', start);
+        container.addEventListener('touchstart', start, { passive: true });
+        window.addEventListener('mousemove', move);
+        window.addEventListener('touchmove', move, { passive: true });
+        window.addEventListener('mouseup', end);
+        window.addEventListener('touchend', end);
+      });
+    }
+
+    let currentModalProject = null;
+
+    function openLightbox(index) {
+      const p = projectsData[index];
+      currentModalProject = p;
+      document.getElementById('lbBadge').textContent = p.badge;
+      document.getElementById('lbTitle').textContent = p.title;
+      document.getElementById('lbDesc').textContent = p.desc;
+      document.getElementById('lbArea').textContent = p.area;
+      document.getElementById('lbSystem').textContent = p.system;
+      document.getElementById('lbDuration').textContent = p.duration;
+
+      const beforeImg = document.getElementById('lbBeforeImg');
+      const afterImg = document.getElementById('lbAfterImg');
+      beforeImg.src = p.img;
+      beforeImg.className = p.beforeClass;
+      afterImg.src = p.img;
+      afterImg.className = p.afterClass;
+
+      // Reset slider to 50%
+      const lbSlider = document.getElementById('lbSlider');
+      lbSlider.querySelector('.ba-after').style.clipPath = 'inset(0 0 0 50%)';
+      lbSlider.querySelector('.ba-divider').style.left = '50%';
+
+      document.getElementById('lightboxModal').classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    function handleModalBackdrop(e) {
+      if (e.target.id === 'lightboxModal') closeLightbox();
+    }
+
+    function bookSimilarProject() {
+      if (currentModalProject) {
+        document.getElementById('projectNotes').value =
+          `Interested in a finish similar to "${currentModalProject.title}" (${currentModalProject.system}). Please contact me for a site inspection.`;
+      }
+      closeLightbox();
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+
+    function setSwatch(hex, name) {
+      document.getElementById('roomPreview').style.backgroundColor = hex;
+      document.getElementById('activeColorName').textContent = `${name} (${hex})`;
+      document.getElementById('roomPreviewLabel').textContent = `${name} — Matte Finish`;
+    }
+
+    function calculateEstimate() {
+      const sqft = parseInt(document.getElementById('sqftRange').value, 10);
+      const service = document.getElementById('serviceType').value;
+      const gradeMultiplier = parseFloat(document.getElementById('paintGrade').value);
+
+      document.getElementById('sqftValue').textContent = sqft.toLocaleString('en-IN');
+
+      const baseRates = { interior: 20, fresh: 28, exterior: 24 };
+      const total = Math.round(sqft * baseRates[service] * gradeMultiplier);
+      const liters = Math.max(2, Math.round(sqft / 65));
+      const days = Math.max(1, Math.ceil(sqft / 400));
+
+      document.getElementById('estimateTotal').textContent = '₹' + total.toLocaleString('en-IN');
+      document.getElementById('paintGallons').textContent = `~${liters} Liters`;
+      document.getElementById('estDays').textContent = `${days}–${days + 1} Days`;
+    }
+
+    function prefillQuote() {
+      const sqft = document.getElementById('sqftValue').textContent;
+      const total = document.getElementById('estimateTotal').textContent;
+      const serviceText = document.getElementById('serviceType').selectedOptions[0].text;
+      document.getElementById('projectNotes').value =
+        `Interested in ${serviceText} for ~${sqft} sq.ft. (Online Estimate: ${total}). Please schedule an inspection.`;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterProjects(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.remove('bg-slate-900', 'text-white');
+        b.classList.add('bg-slate-200', 'text-slate-700');
+      });
+      btn.classList.remove('bg-slate-200', 'text-slate-700');
+      btn.classList.add('bg-slate-900', 'text-white');
+
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.style.display = (category === 'all' || card.dataset.cat === category) ? 'flex' : 'none';
+      });
+    }
+
+    function submitQuote(e) {
+      e.preventDefault();
+      document.getElementById('formSuccess').classList.remove('hidden');
+      e.target.reset();
+    }
+
+    initSliders();
+    calculateEstimate();
+  </script>
+</body>
+</html>
