@@ -73,6 +73,7 @@
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
         <a href="#services" class="hover:text-amber-600 transition">Services</a>
+        <a href="#about" class="hover:text-amber-600 transition">About Us</a>
         <a href="#estimator" class="hover:text-amber-600 transition">Cost Estimator</a>
         <a href="#portfolio" class="hover:text-amber-600 transition">Recent Work</a>
         <a href="#contact" class="hover:text-amber-600 transition">Contact</a>
@@ -187,6 +188,54 @@
           <li>✓ Rust-inhibiting metal primers</li>
           <li>✓ Designer stucco & concrete textures</li>
         </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Us Section -->
+  <section id="about" class="py-20 bg-white border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 grid lg:grid-cols-12 gap-12 items-start">
+      <div class="lg:col-span-5">
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-md">
+          <img
+            src="C:\Users\Better\Downloads\Site\New Site\Prashant Naik.jpg"
+            alt="Lead professional painter at ApexCoat"
+            class="w-full h-96 object-cover object-top bg-slate-100"
+          />
+          <div class="p-6 bg-slate-900 text-white">
+            <span class="inline-block bg-amber-500/20 text-amber-300 border border-amber-500/30 text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full mb-2">
+              Master Painter &amp; Project Lead
+            </span>
+            <h3 class="text-xl font-extrabold">Professional Painting Specialist</h3>
+            <p class="text-xs text-slate-300 mt-1">Residential • Commercial • Surface Prep &amp; Finishing</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7">
+        <span class="inline-block bg-amber-100 text-amber-700 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-3">
+          About Us
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 mb-5">
+          Dedicated Craftsmanship in Every Brushstroke &amp; Coat.
+        </h2>
+
+        <ol class="space-y-2.5 text-sm sm:text-base text-slate-600 leading-relaxed mb-8 list-decimal list-inside">
+          <li>Leading the painting team at ApexCoat brings hands-on mastery in residential, commercial, and custom surface finishing.</li>
+          <li>Every project begins with a careful inspection of walls, ceilings, and substrates to spot moisture, cracks, or uneven plaster early.</li>
+          <li>Deep surface preparation—including putty leveling, crack filling, and controlled sanding—is treated as the foundation of a lasting coat.</li>
+          <li>Floors, furniture, fixtures, and trim are thoroughly masked before work begins to keep living and working spaces protected.</li>
+          <li>Expertise spans smooth interior emulsions, crisp ceiling cut-ins, and rich accent tones tailored to natural and artificial lighting.</li>
+          <li>Exterior coatings and waterproofing systems are applied with attention to weather resistance, dampness protection, and long-term durability.</li>
+          <li>Woodwork, doors, metal grilles, and textured feature walls receive careful coat selection and clean edge detail.</li>
+          <li>Only genuine branded paints, primers, and low-VOC finishes are used so surfaces look vibrant and stay easy to maintain.</li>
+          <li>Clear timelines, honest communication, and steady daily progress ensure homeowners and businesses know what to expect at every stage.</li>
+          <li>Each job wraps up with thorough cleanup and a final walkthrough so every room is ready to enjoy immediately.</li>
+        </ol>
+
+        <a href="#contact" class="inline-flex items-center gap-2 bg-slate-900 hover:bg-amber-600 text-white text-sm font-bold px-6 py-3 rounded-xl transition">
+          Book a Free Site Inspection →
+        </a>
       </div>
     </div>
   </section>
@@ -489,13 +538,22 @@
     </div>
   </section>
 
-  <!-- Floating WhatsApp Chat Button -->
-  <button onclick="openDirectWhatsApp()" aria-label="Chat on WhatsApp" class="fixed bottom-6 right-6 z-40 group flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold pl-4 pr-5 py-3.5 rounded-full shadow-2xl transition-all hover:scale-105">
-    <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
-      <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 22l4.955-1.301A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
-    </svg>
-    <span class="text-sm tracking-tight">Chat on WhatsApp</span>
-  </button>
+  <!-- Floating Call Now & WhatsApp Action Buttons -->
+  <div class="fixed bottom-6 right-6 z-40 flex flex-col items-end gap-3">
+    <a href="tel:+917400253895" aria-label="Call Now" class="group flex items-center gap-3 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold pl-4 pr-5 py-3.5 rounded-full shadow-2xl border border-amber-300/40 transition-all hover:scale-105">
+      <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+        <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1.003 1.003 0 011.01-.24c1.12.37 2.33.57 3.58.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.46.57 3.58.11.35.03.74-.25 1.01l-2.2 2.2z"/>
+      </svg>
+      <span class="text-sm tracking-tight">Call Now</span>
+    </a>
+
+    <button onclick="openDirectWhatsApp()" aria-label="Chat on WhatsApp" class="group flex items-center gap-3 bg-[#25D366] hover:bg-[#20bd5a] text-slate-950 font-bold pl-4 pr-5 py-3.5 rounded-full shadow-2xl transition-all hover:scale-105">
+      <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24">
+        <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824zM12 2C6.477 2 2 6.477 2 12c0 1.89.525 3.66 1.438 5.168L2.546 22l4.955-1.301A9.956 9.956 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/>
+      </svg>
+      <span class="text-sm tracking-tight">Chat on WhatsApp</span>
+    </button>
+  </div>
 
   <!-- Footer -->
   <footer class="bg-slate-950 text-slate-500 py-8 text-center text-xs border-t border-slate-900">
@@ -503,8 +561,166 @@
   </footer>
 
   <script>
-    // यहाँ अपना असली WhatsApp नंबर डालें (Country Code 91 के साथ, बिना + या स्पेस के)
     const WHATSAPP_NUMBER = "917400253895";
+
+    const PROJECTS = [
+      {
+        title: "Bandra West Apartment",
+        badge: "Interior • 3BHK",
+        desc: "Full Warm Alabaster satin emulsion repaint with custom PU wood polish on main teak doors.",
+        area: "1,450 sq. ft.",
+        system: "Interior Satin Emulsion + Primer",
+        duration: "4 Days",
+        beforeImg: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85",
+        afterImg: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1200&q=85",
+        beforeFilter: "grayscale contrast-75 brightness-90",
+        afterFilter: "saturate-125 brightness-105"
+      },
+      {
+        title: "Juhu Coastal Bungalow",
+        badge: "Exterior • Villa",
+        desc: "Crack-bridging waterproofing basecoat plus salt-resistant elastomeric exterior topcoat.",
+        area: "2,800 sq. ft.",
+        system: "Elastomeric Weather Coat",
+        duration: "6 Days",
+        beforeImg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+        afterImg: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=85",
+        beforeFilter: "sepia-[.45] contrast-75 brightness-75",
+        afterFilter: "saturate-110 brightness-105"
+      },
+      {
+        title: "Andheri Creative Loft",
+        badge: "Commercial • Studio",
+        desc: "Zero-VOC Sage Matte walls paired with a hand-troweled acoustic limewash feature backdrop.",
+        area: "1,850 sq. ft.",
+        system: "Zero-VOC Matte + Limewash",
+        duration: "5 Days",
+        beforeImg: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
+        afterImg: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1200&q=85",
+        beforeFilter: "grayscale contrast-75 brightness-85",
+        afterFilter: "saturate-125 brightness-105"
+      }
+    ];
+
+    let activeLightboxIndex = 0;
+
+    function setSwatch(hex, name) {
+      document.getElementById('roomPreview').style.backgroundColor = hex;
+      document.getElementById('activeColorName').textContent = `${name} (${hex})`;
+      document.getElementById('roomPreviewLabel').textContent = `${name} — Matte Finish`;
+    }
+
+    function calculateEstimate() {
+      const sqft = Number(document.getElementById('sqftRange').value);
+      const service = document.getElementById('serviceType').value;
+      const gradeMultiplier = Number(document.getElementById('paintGrade').value);
+
+      document.getElementById('sqftValue').textContent = sqft;
+
+      const baseRates = {
+        interior: 20,
+        fresh: 32,
+        exterior: 26
+      };
+
+      const total = Math.round(sqft * baseRates[service] * gradeMultiplier);
+      const liters = Math.max(4, Math.round((sqft / 180) * 2.5));
+      const days = Math.max(2, Math.ceil(sqft / 450));
+
+      document.getElementById('estimateTotal').textContent = `₹${total.toLocaleString('en-IN')}`;
+      document.getElementById('paintGallons').textContent = `~${liters} Liters`;
+      document.getElementById('estDays').textContent = `${days}–${days + 1} Days`;
+    }
+
+    function prefillQuote(customText) {
+      const sqft = document.getElementById('sqftRange').value;
+      const serviceText = document.getElementById('serviceType').selectedOptions[0].text;
+      const gradeText = document.getElementById('paintGrade').selectedOptions[0].text;
+      const totalText = document.getElementById('estimateTotal').textContent;
+
+      const notesField = document.getElementById('projectNotes');
+      notesField.value = customText || `Estimate: ${totalText} for ${sqft} sq.ft (${serviceText}, ${gradeText}).`;
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function filterProjects(category, btn) {
+      document.querySelectorAll('.filter-btn').forEach(b => {
+        b.className = 'filter-btn bg-slate-200 text-slate-700 text-xs font-bold px-4 py-2 rounded-lg hover:bg-slate-300';
+      });
+      btn.className = 'filter-btn bg-slate-900 text-white text-xs font-bold px-4 py-2 rounded-lg';
+
+      document.querySelectorAll('.project-card').forEach(card => {
+        const match = category === 'all' || card.dataset.cat === category;
+        card.classList.toggle('hidden', !match);
+      });
+    }
+
+    function setSliderPosition(container, percent) {
+      const clamped = Math.max(0, Math.min(100, percent));
+      const afterEl = container.querySelector('.ba-after');
+      const dividerEl = container.querySelector('.ba-divider');
+      if (afterEl) afterEl.style.clipPath = `inset(0 0 0 ${clamped}%)`;
+      if (dividerEl) dividerEl.style.left = `${clamped}%`;
+    }
+
+    document.querySelectorAll('[data-slider]').forEach(container => {
+      let dragging = false;
+      const updateFromClientX = (clientX) => {
+        const rect = container.getBoundingClientRect();
+        const pct = ((clientX - rect.left) / rect.width) * 100;
+        setSliderPosition(container, pct);
+      };
+
+      container.addEventListener('pointerdown', (e) => {
+        dragging = true;
+        container.setPointerCapture(e.pointerId);
+        updateFromClientX(e.clientX);
+      });
+
+      container.addEventListener('pointermove', (e) => {
+        if (!dragging) return;
+        updateFromClientX(e.clientX);
+      });
+
+      container.addEventListener('pointerup', () => {
+        dragging = false;
+      });
+    });
+
+    function openLightbox(index) {
+      activeLightboxIndex = index;
+      const proj = PROJECTS[index];
+      document.getElementById('lbBadge').textContent = proj.badge;
+      document.getElementById('lbTitle').textContent = proj.title;
+      document.getElementById('lbDesc').textContent = proj.desc;
+      document.getElementById('lbArea').textContent = proj.area;
+      document.getElementById('lbSystem').textContent = proj.system;
+      document.getElementById('lbDuration').textContent = proj.duration;
+
+      const beforeImg = document.getElementById('lbBeforeImg');
+      const afterImg = document.getElementById('lbAfterImg');
+      beforeImg.src = proj.beforeImg;
+      afterImg.src = proj.afterImg;
+      beforeImg.className = `w-full h-full object-cover ${proj.beforeFilter}`;
+      afterImg.className = `w-full h-full object-cover ${proj.afterFilter}`;
+
+      setSliderPosition(document.getElementById('lbSlider'), 50);
+      document.getElementById('lightboxModal').classList.remove('hidden');
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightboxModal').classList.add('hidden');
+    }
+
+    function handleModalBackdrop(e) {
+      if (e.target.id === 'lightboxModal') closeLightbox();
+    }
+
+    function bookSimilarProject() {
+      const proj = PROJECTS[activeLightboxIndex];
+      closeLightbox();
+      prefillQuote(`Interested in a finish similar to "${proj.title}" (${proj.system}, ~${proj.area}).`);
+    }
 
     function openDirectWhatsApp() {
       const text = encodeURIComponent("Hello ApexCoat! I would like to inquire about painting services and book a free site inspection.");
@@ -518,186 +734,18 @@
       const city = document.getElementById('clientCity').value.trim();
       const notes = document.getElementById('projectNotes').value.trim();
 
-      const message =
-        `*New Painting Quote Request — ApexCoat*\n` +
-        `----------------------------------\n` +
-        `*Name:* ${name}\n` +
-        `*Phone:* ${phone}\n` +
-        (city ? `*Location:* ${city}\n` : ``) +
-        `*Details:* ${notes || "Need a free on-site painting estimate."}`;
+      const lines = [
+        "Hello ApexCoat! I'd like to book a free site inspection:",
+        `• Name: ${name}`,
+        `• Phone: ${phone}`,
+        city ? `• Location: ${city}` : null,
+        notes ? `• Details: ${notes}` : null
+      ].filter(Boolean).join("\n");
 
       document.getElementById('formSuccess').classList.remove('hidden');
-      const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
-      window.open(waUrl, "_blank");
-      e.target.reset();
+      window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines)}`, "_blank");
     }
 
-    const projectsData = [
-      {
-        title: "Bandra West Apartment",
-        badge: "Interior • 3BHK",
-        desc: "2-coat acrylic putty leveling followed by Warm Alabaster washable satin emulsion and hand-rubbed teak PU polish.",
-        area: "2,100 sq. ft.",
-        system: "Luxury Satin Emulsion + PU Wood",
-        duration: "5 Days",
-        img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=1400&q=85",
-        beforeClass: "w-full h-full object-cover grayscale contrast-75 brightness-90",
-        afterClass: "w-full h-full object-cover saturate-125 brightness-105"
-      },
-      {
-        title: "Juhu Coastal Bungalow",
-        badge: "Exterior • Villa",
-        desc: "High-pressure fungal wash, fiber-reinforced crack filling, and high-build elastomeric coastal weather barrier.",
-        area: "4,400 sq. ft.",
-        system: "Elastomeric Damp-Proof Shield",
-        duration: "8 Days",
-        img: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1400&q=85",
-        beforeClass: "w-full h-full object-cover sepia-[.45] contrast-75 brightness-75",
-        afterClass: "w-full h-full object-cover saturate-110 brightness-105"
-      },
-      {
-        title: "Andheri Creative Loft",
-        badge: "Commercial • Studio",
-        desc: "Zero-VOC Sage Matte emulsion across workstations with a custom hand-troweled mineral limewash accent wall.",
-        area: "1,650 sq. ft.",
-        system: "Zero-VOC Matte + Limewash Texture",
-        duration: "4 Days",
-        img: "https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=1400&q=85",
-        beforeClass: "w-full h-full object-cover grayscale contrast-75 brightness-85",
-        afterClass: "w-full h-full object-cover saturate-125 brightness-105"
-      }
-    ];
-
-    function setSliderPosition(container, clientX) {
-      const rect = container.getBoundingClientRect();
-      let pct = ((clientX - rect.left) / rect.width) * 100;
-      pct = Math.max(2, Math.min(98, pct));
-      container.querySelector('.ba-after').style.clipPath = `inset(0 0 0 ${pct}%)`;
-      container.querySelector('.ba-divider').style.left = `${pct}%`;
-    }
-
-    function initSliders() {
-      document.querySelectorAll('[data-slider]').forEach(container => {
-        let dragging = false;
-
-        const start = (e) => {
-          dragging = true;
-          const x = e.touches ? e.touches[0].clientX : e.clientX;
-          setSliderPosition(container, x);
-        };
-
-        const move = (e) => {
-          if (!dragging) return;
-          const x = e.touches ? e.touches[0].clientX : e.clientX;
-          setSliderPosition(container, x);
-        };
-
-        const end = () => { dragging = false; };
-
-        container.addEventListener('mousedown', start);
-        container.addEventListener('touchstart', start, { passive: true });
-        window.addEventListener('mousemove', move);
-        window.addEventListener('touchmove', move, { passive: true });
-        window.addEventListener('mouseup', end);
-        window.addEventListener('touchend', end);
-      });
-    }
-
-    let currentModalProject = null;
-
-    function openLightbox(index) {
-      const p = projectsData[index];
-      currentModalProject = p;
-      document.getElementById('lbBadge').textContent = p.badge;
-      document.getElementById('lbTitle').textContent = p.title;
-      document.getElementById('lbDesc').textContent = p.desc;
-      document.getElementById('lbArea').textContent = p.area;
-      document.getElementById('lbSystem').textContent = p.system;
-      document.getElementById('lbDuration').textContent = p.duration;
-
-      const beforeImg = document.getElementById('lbBeforeImg');
-      const afterImg = document.getElementById('lbAfterImg');
-      beforeImg.src = p.img;
-      beforeImg.className = p.beforeClass;
-      afterImg.src = p.img;
-      afterImg.className = p.afterClass;
-
-      const lbSlider = document.getElementById('lbSlider');
-      lbSlider.querySelector('.ba-after').style.clipPath = 'inset(0 0 0 50%)';
-      lbSlider.querySelector('.ba-divider').style.left = '50%';
-
-      document.getElementById('lightboxModal').classList.remove('hidden');
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeLightbox() {
-      document.getElementById('lightboxModal').classList.add('hidden');
-      document.body.style.overflow = '';
-    }
-
-    function handleModalBackdrop(e) {
-      if (e.target.id === 'lightboxModal') closeLightbox();
-    }
-
-    function bookSimilarProject() {
-      if (currentModalProject) {
-        document.getElementById('projectNotes').value =
-          `Interested in a finish similar to "${currentModalProject.title}" (${currentModalProject.system}). Please contact me for a site inspection.`;
-      }
-      closeLightbox();
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-
-    function setSwatch(hex, name) {
-      document.getElementById('roomPreview').style.backgroundColor = hex;
-      document.getElementById('activeColorName').textContent = `${name} (${hex})`;
-      document.getElementById('roomPreviewLabel').textContent = `${name} — Matte Finish`;
-    }
-
-    function calculateEstimate() {
-      const sqft = parseInt(document.getElementById('sqftRange').value, 10);
-      const service = document.getElementById('serviceType').value;
-      const gradeMultiplier = parseFloat(document.getElementById('paintGrade').value);
-
-      document.getElementById('sqftValue').textContent = sqft.toLocaleString('en-IN');
-
-      const baseRates = { interior: 20, fresh: 28, exterior: 24 };
-      const total = Math.round(sqft * baseRates[service] * gradeMultiplier);
-      const liters = Math.max(2, Math.round(sqft / 65));
-      const days = Math.max(1, Math.ceil(sqft / 400));
-
-      document.getElementById('estimateTotal').textContent = '₹' + total.toLocaleString('en-IN');
-      document.getElementById('paintGallons').textContent = `~${liters} Liters`;
-      document.getElementById('estDays').textContent = `${days}–${days + 1} Days`;
-    }
-
-    function prefillQuote() {
-      const sqft = document.getElementById('sqftValue').textContent;
-      const total = document.getElementById('estimateTotal').textContent;
-      const serviceText = document.getElementById('serviceType').selectedOptions[0].text;
-      document.getElementById('projectNotes').value =
-        `Interested in ${serviceText} for ~${sqft} sq.ft. (Online Estimate: ${total}). Please schedule an inspection.`;
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function filterProjects(category, btn) {
-      document.querySelectorAll('.filter-btn').forEach(b => {
-        b.classList.remove('bg-slate-900', 'text-white');
-        b.classList.add('bg-slate-200', 'text-slate-700');
-      });
-      btn.classList.remove('bg-slate-200', 'text-slate-700');
-      btn.classList.add('bg-slate-900', 'text-white');
-
-      document.querySelectorAll('.project-card').forEach(card => {
-        card.style.display = (category === 'all' || card.dataset.cat === category) ? 'flex' : 'none';
-      });
-    }
-
-    initSliders();
     calculateEstimate();
   </script>
 </body>
